@@ -1,0 +1,9 @@
+//- 想到什麼就先寫之後再分類
+//- accordion 手風琴選單
+mixin accordion(id, name, label, href, aTitle, linkTitle)
+	div
+		input(id=id, name=name, type="radio")
+		label(for=id)=label
+		ul.accNav
+			li
+				a(href=href, title=aTitle)=linkTitle

@@ -1,0 +1,47 @@
+//- 用了 mixin 就不可用 block 變更
+//- include 必須在 extends or block 之後
+//- 使用方式 ex +fn('amit') 括符內要加 ''
+
+//- breadcrumbs
+//- exsample
+//- include _tools.pug
+//- ul.Breadcumbs
+//- 	+breadcrumbs('首頁','index.html')
+mixin breadcrumbs(label, href = "#", title)
+	li
+		a(href=href, title=title)
+			= label
+
+//- pagination
+//- exsample
+//- div
+//- 	+pagination
+mixin pagination
+	- var n = 2;
+	#Pagination
+		ul.pagination
+			li.page-item
+				a.page-link(href="" title="第一頁")
+					i
+			li.page-item
+				a.page-link(href="" title="上一頁")
+					i
+			li.page-item
+					a.page-link(href="#" active)  1
+			while n < 11
+				li.page-item
+					a.page-link(href="#")= n++
+			li.page-item
+				a.page-link(href="" title="下一頁")
+					i
+			li.page-item
+				a.page-link(href="" title="最後頁")
+					i
+		//- .setting 共2頁/28筆
+		//- 		span.dev-script-oper ,&nbsp;每頁顯示
+		//- 		select(title="每頁顯示筆數")
+		//- 			option(selected="selected") 12
+		//- 			option 24
+		//- 			option 26
+		//- 		| 筆, 移至第&nbsp; #[input(type="text" title="移至第幾頁")]&nbsp;頁
+		//- 		input(type="button" value="確定")

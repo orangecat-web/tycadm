@@ -1,0 +1,31 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 關於二手輔具資源站 -服務簡介 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 服務簡介
+		.title
+			h2 關於二手輔具資源站
+		#about
+			include _about_aside.pug
+			#content
+				div
+					.guide_title
+						a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+					.editable_content
+						p 桃園市二手輔具資源站，推廣二手輔具資源有效利用，提供桃園市民免費 輔具回收、輔具維修、輔具借用服務。
+						h3 輔具回收：
+						p 本站回收功能狀態良好之二手輔具，歡迎送至本站可再生利用，提供有需求之民眾，也可來電通知本站免費派車回收。
+						h3 輔具維修：
+						p 本站提供桃園市民有二手輔具維修需求，如免費 諮詢、檢測、調效、維修服務。（據點、巡迴點提供快速簡易維修服務）
+						h3 輔具借用：
+						p 本站回收輔具皆經過 兩次清潔、雙重消毒、高溫烘乾、檢測維修、功能測試，輔具正常操作後，即免費提供給有需求之桃園市民，因二手輔具皆是民眾愛心提供回收，部分輔具需求人數眾多，依資格優先順序領用。

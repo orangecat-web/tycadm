@@ -1,0 +1,279 @@
+@import _layout
+=focus
+	&:focus
+		li
+			background: $link_focus
+			outline:
+				width: 2px
+				style: dashed
+				color: $nav_border
+			color: #000
+=figure
+	&:focus
+		figure
+			background: $link_focus
+			border: none
+			outline:
+				width: 2px
+				style: dashed
+				color: $nav_border
+			color: #000
+// slider ouline
+=bxwrapper
+	a
+		position: relative
+		&:focus
+			&::after
+				content: ""
+				width: 100%
+				height: 100%
+				border:
+					width: 4px
+					style: dashed
+					color: $nav_border
+				position: absolute
+				top: 0
+				left: 0
+// slider
+.bx-wrapper
+	min-width: 100%
+div.slider
+	min-width: 100%
+	+mb(4)
+	width: 100%
+	+bxwrapper
+// content
+section.content
+	+container(w1750)
+	+mb(4)
+	div.title
+		+mb(3.5)
+		+breakpoint(sm)
+			+mb(2)
+		h2
+			+fontSize(1.75)
+			+fontWeight(700)
+			+tac
+			&::before
+				content: ""
+				border:
+					left:
+						width: 6px
+						color: #a00
+						style: solid
+				+pl(1)
+	div.guide_title
+		+col(12)
+		+px(0)
+	div.row
+		+row
+		+ais
+		+jcc
+		+mb(4)
+		+mx(0)
+		>div
+			+col(4)
+			+breakpoint(md)
+				+col(12)
+				+mb(4)
+		// news
+		div.news
+			+breakpoint(sm)
+				+mb(4)
+			ul.news
+				a
+					li
+						background: #e5e5e5
+						+mb(.5)
+						+py(.5)
+						+px(.75)
+						span
+							+fontSize(.9)
+							color: #666
+						p
+							+mline(1)
+					&:hover
+						li
+							background: #b1d5f1
+					+focus
+		// calendar
+		div.calendar
+			iframe
+				width: 100%
+			span#calendarTitle
+				display: none
+		div.side_link
+			+ase
+			ul.links
+				a
+					li
+						border: 
+							width: 5px
+							color: #00000000
+							style: solid
+						+radius(5)
+						+fontSize(1.7)
+						color: #fff
+						+tac
+						+mb(1)
+						+py(1.5)
+						+pl(2.25)
+						i
+							position: relative
+							&::before
+								position: absolute
+								left: -2.25rem
+					li.recycle
+						background: #36804a
+						+google_icons(recycle)
+						i
+							&::before
+								color: #fff
+						&:hover
+							background: #803638
+							border: 
+								color: #36804a
+					li.borrow
+						background: #0080a4
+						+google_icons(borrow)
+						i
+							&::before
+								color: #fff
+						&:hover
+							background: #a35000
+							border: 
+								color: #0080a4
+					li.service
+						background: #dd7428
+						+google_icons(repair)
+						i
+							&::before
+								color: #fff
+						&:hover
+							background: #28cede
+							border: 
+								color: #dd7428
+					li.rank_query
+						background: #8b5b9e
+						+google_icons(query)
+						i
+							&::before
+								color: #fff
+						&:hover
+							background: #8B9e5c
+							border: 
+								color: #8b5b9e
+					+focus
+					&:focus
+						li
+							i
+								&::before
+									color: #000
+	// booking
+	div.booking
+		+mb(4)
+		ul.list
+			+row
+			+ais
+			+jcb
+			+mx(0)
+			li
+				+col(2)
+				+mb(1.5)
+				+breakpoint(xl)
+					+col(3)
+				+breakpoint(md)
+					+col(4)
+				+breakpoint(sm)
+					+col(6)
+				a
+					figure
+						+p(.25)
+						div.img
+							height: 100vh
+							max-height: 265px
+							border: 
+								width: 1px
+								color: #000
+								style: solid
+							line-height: 0
+							+mb(.75)
+							overflow: hidden
+							display: flex
+							flex-direction: column
+							+aic
+							+jcc
+							img
+								width: auto
+								height: fit-content
+						figcaption
+							p
+								+fontSize(1.5)
+								+tac
+								+mb(.5)
+							p.more
+								span
+									background: #b90e24
+									+fontSize(1.05)
+									color: #fff
+									+py(.5)
+									+pr(1.5)
+									+pl(3)
+									border-radius: 10px
+									+google_icons(clock)
+									i
+										position: relative
+										&::before
+											+fontSize(1.25)
+											color: #fff
+											position: absolute
+											top: 0
+											left: -1.5rem
+					+figure
+					&:hover, &:focus
+						figure
+							div.img
+								border:
+									width: 2px
+								overflow: hidden
+								img
+									transform: scale(1.5)
+									+transition
+							figcaption
+								p.more
+									span
+										background: #0f7c25
+	// links
+	div.links
+		ul.links
+			+row
+			+aic
+			+jcc
+			+mx(0)
+			li
+				+col-5
+				+breakpoint(lg)
+					+col(4)
+				+breakpoint(sm)
+					+col(6)
+				a
+					figure
+						.img
+							border:
+								width: 1px
+								color: #000
+								style: solid
+							line-height: 0
+							+mb(.5)
+						+p(.15)
+						figcaption
+							+tac
+					+figure
+					&:hover, &:focus
+						figure
+							.img
+								border:
+									width: 2px
+							figcaption
+								+fontSize(1.25)
+								+transition

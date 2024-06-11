@@ -1,0 +1,210 @@
+// Orange's web template basic v3.0
+@charset "utf-8"
+// reset
+@import _tools/_reset
+// 基礎設定
+@import _tools/_function
+// 元件工具
+@import _tools/_mixin
+// 元件工具 | 濾鏡及轉場效果
+@import _tools/_effects
+// 格線系統
+@import _tools/_grid
+// 外部連結檔案
+@import _tools/_include
+// 網站顏色
+@import _tools/_color
+// google icons
+@import _tools/_icons
+// spacing
+@import _tools/_spacing
+// accessibility
+@import _tools/_accessibility
+// for desktop screen dpi or laptop dpi 125% & 150% only
++DPIreset
+
+// global
+html, body, [canvas=container], [off-canvas]
+	margin: 0
+	padding: 0
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+html, body
+	width: $width
+	height: $height
+	+fontFamily
+	+fontType(1)
+a,button,input,select,textarea
+	+transition
+
+// base
+button.openNav
+	background: none
+	border: none
+	cursor: pointer
+
+// form
+input
+	background: map-get($input_bg, base)
+	border:
+		width: 1px
+		color: map-get($input_border, base)
+		style: solid
+		radius: 5px
+	+py(.5)
+	+px(.75)
+	&:hover
+		background: map-get($input_bg, hover)
+	&:active
+		background: map-get($input_bg, focus)
+	&:focus
+		background: map-get($input_bg, focus) !important
+		outline:
+			width: 2px !important
+			style: dashed !important
+			color: $nav_border !important
+		color: #000 !important
+select
+	background: map-get($select_bg, base)
+	border:
+		width: 1px
+		color: map-get($input_border, base)
+		style: solid
+		radius: 5px
+	+py(.5)
+	+px(.75)
+	&:hover
+		background: map-get($select_bg, focus)
+	&:focus
+		background: map-get($input_bg, focus) !important
+		outline:
+			width: 2px !important
+			style: dashed !important
+			color: $nav_border !important
+		color: #000 !important
+textarea
+	+cols
+	height: 200px
+	background: map-get($select_bg, base)
+	+py(1)
+	border:
+		width: 1px
+		color: map-get($input_border, base)
+		style: solid
+		radius: 5px
+	&:hover
+		background: map-get($textarea_bg, hover)
+	&:focus
+		background: map-get($input_bg, focus) !important
+		outline:
+			width: 2px !important
+			style: dashed !important
+			color: $nav_border !important
+		color: #000 !important
+
+// img
+img
+	width: 100%
+	max-width: 100%
+	height: auto
+
+// nav mobile
+[canvas]
+	z-index: 1
+[canvas=container]
+	width: 100%
+	height: 100%
+	overflow-y: auto
+	position: relative
+	-webkit-overflow-scrolling: touch // Enables momentum scrolling on iOS devices, may be removed by setting to 'auto' in your own CSS.
+[canvas=container]:before,
+[canvas=container]:after
+	clear: both
+	content: ''
+	display: table
+[off-canvas]
+	display: none
+	position: fixed
+	overflow: hidden
+	overflow-y: auto
+	// background-color: map-get($nav-bg, dark)
+	// Basic background color, overwrite this in your own css.
+	-webkit-overflow-scrolling: touch // Enables momentum scrolling on iOS devices, may be removed by setting to 'auto' in your own CSS.
+// nav posistion
+[off-canvas*=top]
+	width: $width
+	height: 255px
+	top: 0
+[off-canvas*=right]
+	width: $width
+	height: $height
+	top: 0
+	right: 0
+[off-canvas*=bottom]
+	width: $width
+	height: 255px
+	bottom: 0
+[off-canvas*=left]
+	width: $width
+	height: $height
+	top: 0
+	left: 0
+[off-canvas*=reveal]
+	z-index: 0
+[off-canvas*=push]
+	z-index: 1
+[off-canvas*=overlay]
+	z-index: 9999
+[off-canvas*=shift]
+	z-index: 0
+// Animation
+[canvas], [off-canvas]
+	-webkit-transform: translate( 0px, 0px )
+	-ms-transform: translate( 0px, 0px )
+	transform: translate( 0px, 0px )
+	-webkit-transition: -webkit-transform 300ms
+	transition: transform 300ms
+	-webkit-backface-visibility: hidden /* Prevents flickering, may be removed if experiencing problems with fixed background images in Chrome. */
+[off-canvas*=shift][off-canvas*=top]
+	-webkit-transform: translate( 0px, 50% )
+	transform: translate( 0px, 50% )
+[off-canvas*=shift][off-canvas*=right]
+	-webkit-transform: translate( -50%, 0px )
+	transform: translate( -50%, 0px )
+[off-canvas*=shift][off-canvas*=bottom]
+	-webkit-transform: translate( 0px, -50% )
+	transform: translate( 0px, -50% )
+[off-canvas*=shift][off-canvas*=left]
+	-webkit-transform: translate( 50%, 0px )
+	transform: translate( 50%, 0px )
+// google icons
+.material-icons,
+.material-icons-outlined,
+.material-icons-sharp,
+.material-icons-two-tone,
+.material-icons-round
+	font-weight: normal
+	font-style: normal
+	display: inline-block
+	line-height: 1
+	text-transform: none
+	letter-spacing: normal
+	word-wrap: normal
+	white-space: nowrap
+	direction: ltr
+	-webkit-font-smoothing: antialiased
+	text-rendering: optimizeLegibility
+	-moz-osx-font-smoothing: grayscale
+	font-feature-settings: 'liga'
+// go top scroll
+div.goTop
+	width: 2rem
+	+goTop
+	a.goTop
+		&:focus
+			p
+				background: $link_focus
+				outline:
+					width: 2px
+					style: dashed
+					color: $nav_border

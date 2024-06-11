@@ -1,0 +1,119 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 意見回饋 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 意見回饋表
+		.title
+			h2 意見回饋表
+		.guide_title
+			a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+		#contact
+			.form_content
+				form(role="form" method="post" name="contact" id="contact_form")
+					ul.form
+						li
+							label(for="ContactName") 您的姓名 #[span 必填]
+							input(type="text" id="ContactName" name="name" maxlength="50" placeholder="請輸入您的姓名" title="您的姓名" aria-required="true")
+						li.genders
+							label(for="ContactGender") 性別 #[span 必填]
+							input(type="radio" id="ContactGenderM" name="genders" title="先生" aria-required="true")
+							label(for="ContactGenderM") 先生
+							input(type="radio" id="ContactGenderF" name="genders" title="小姐" aria-required="true")
+							label(for="ContactGenderF") 小姐
+						li
+							label(for="ContactCase") 服務案號
+							input(type="text" id="ContactCase" name="ContactCase" placeholder="請輸入服務案號" title="服務案號" aria-required="true")
+						li
+							label(for="ContactPhone") 連絡電話 #[span 必填]
+							input(type="text" id="ContactPhone" name="ContactPhone" placeholder="請輸入連絡電話" title="連絡電話" aria-required="true")
+						li
+							label(for="ContactMali") 電子信箱 #[span 必填]
+							input(type="text" id="ContactMali" name="ContactMali" placeholder="請輸入電子信箱" title="電子信箱" aria-required="true")
+					h3.form_title.subtitle 友善及專業的服務
+					ul.form
+						li.ContactSevriveOptions
+							label(for="ContactSevriveOptions") 您對於本次服務人員的服務態度感到 #[span 必填]
+							ul.SevriveOptions
+								li
+									input(type="radio" id="ContactSevriveOptions01" name="SevriveOptions01" title="滿意" aria-required="true")
+									label(for="SevriveOptions01") 滿意
+								li
+									input(type="radio" id="ContactSevriveOptions02" name="SevriveOptions02" title="普通" aria-required="true")
+									label(for="SevriveOptions02") 普通
+								li
+									input(type="radio" id="ContactSevriveOptions02" name="SevriveOptions03" title="不滿意" aria-required="true")
+									label(for="SevriveOptions03") 不滿意
+						li.ContactSevriveOptions
+							label(for="ContactSevriveOptions") 您對於本次服務人員的專業性感到 #[span 必填]
+							ul.SevriveOptions
+								li
+									input(type="radio" id="ContactSevriveOptions01" name="SevriveOptions01" title="滿意" aria-required="true")
+									label(for="SevriveOptions01") 滿意
+								li
+									input(type="radio" id="ContactSevriveOptions02" name="SevriveOptions02" title="普通" aria-required="true")
+									label(for="SevriveOptions02") 普通
+								li
+									input(type="radio" id="ContactSevriveOptions02" name="SevriveOptions03" title="不滿意" aria-required="true")
+									label(for="SevriveOptions03") 不滿意
+						li.ContactSevriveOptions
+							label(for="ContactSevriveOptions") 您對於本次輔具申請流程感到 #[span 必填]
+							ul.SevriveOptions
+								li
+									input(type="radio" id="ContactSevriveOptions01" name="SevriveOptions01" title="滿意" aria-required="true")
+									label(for="SevriveOptions01") 滿意
+								li
+									input(type="radio" id="ContactSevriveOptions02" name="SevriveOptions02" title="普通" aria-required="true")
+									label(for="SevriveOptions02") 普通
+								li
+									input(type="radio" id="ContactSevriveOptions02" name="SevriveOptions03" title="不滿意" aria-required="true")
+									label(for="SevriveOptions03") 不滿意
+					h3.form_title.subtitle 您對桃園市二手輔具資源站的意見回饋
+					ul.form
+						li.notice
+							label(for="contactMessage")
+								span.sr-only 請填寫意見回饋
+							textarea(id="contactMessage" name="contactMessage")
+						li.CAPTCHA
+							label(for="CAPTCHACode") 驗證碼 #[span 必填]
+							input(type="text" id="CAPTCHACode" name="CAPTCHACode" title="驗證碼" aria-required="true")
+							img#imgcode(src="captcha/securimage_show.jpg" alt="請輸入驗證碼")
+							a(href="javascript:;" title="語音播放")
+								span #[i] 語音播放
+					.button
+						button.reset(type="button" id="reset" name="reset") 清除重填
+						button.submit(type="button" id="contact" name="contact") 確認送出
+				.Notice
+					h4 注意事項：
+					p 敬請留下您的真實聯絡資料，並具體表達意見內容，服務人員將盡快處理與您聯繫。
+			.contact_info
+				.info_content
+					dl
+						dt 桃園市二手輔具資源站
+						dd.location
+							i
+							|地址：桃園市八德區崁頂路 360 號
+						dd.phone
+							i
+							|電話：03-3688793
+						dd.fax
+							i
+							|傳真：03-3683464
+						dd.email
+							i
+							|E-mail：datk.tycadm@gmail.com
+						dd.clock
+							i
+							|服務時間：週一 至 週五 上午 8:00 - 12:00 #[br]
+							|下午 1:00 - 5:00 週六、日及國定假日休息
+				.googlemap
+					iframe(id="maps-ifram" name="maps-ifram" title="桃園市二手輔具資源站Googke位置圖" allowfullscreen src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=桃園市八德區崁頂路360號&z=16&output=embed&t=")

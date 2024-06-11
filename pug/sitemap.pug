@@ -1,0 +1,101 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 網站導覽 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 網站導覽
+		.title
+			h2 網站導覽
+		.guide_title
+			a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+		#sitemap
+			div
+				.sitemap_intro
+					p 本網站依『無障礙網頁開發規範』設計原則而建置，遵循無障礙網站設計之規範，提供網頁導盲磚(:::)、網站導覽 (Site Navigator)、鍵盤快速鍵 (Access Key) 等設計方式。
+					.intro
+						dl
+							dt
+								strong 本網站的主要區塊內容及快速鍵(Accesskey)設定如下：
+							dd
+								i 
+								|上方導覽區(Alt+U)
+							dd
+								i 
+								|主選單區域(Alt+M)：此區塊呈現各網頁的頁面按鈕。
+							dd
+								i 
+								|中央內容區(Alt+C)：為本站主要內容區，點選任一連結之後，其所有內容都會呈現在本區。
+							dd
+								i 
+								|左側次選單區(Alt+L)：此區塊列有單元的次要連結。
+							dd
+								i 
+								|下方功能區塊(Alt+Z)
+						dl
+							dt 
+								strong 各瀏覽器快速鍵操作說明：
+							dd
+								i 
+								|Internet Explorer 請使用Alt加上快速鍵代碼操作。
+							dd
+								i 
+								|Firefox 請使用Alt+Shift加上快速鍵代碼操作。
+							dd
+								i 
+								|Google Chrome 若作業系統為Windows請使用Alt加上快速鍵代碼操作，若為Mac則使用Alt+Option加上快速鍵代碼操作。
+							dd
+								i 
+								|Opera 請使用Shift+Esc加上快速鍵代碼操作。
+							dd
+								i 
+								|Safari 若作業系統為Windows請使用Alt加上快速鍵代碼操作，若作業系統為Mac則使用Alt+Option加上快速鍵代碼操作。
+						dl
+							dt 
+								strong 常用鍵盤快速鍵說明：
+							dd
+								i 
+								|← → or ↑↓：頁面上下左右移動。
+							dd
+								i 
+								|Home or End：跳至頁面的最上方或最下方。
+							dd
+								i 
+								|鍵盤Tab鍵：下一個選項。
+							dd
+								i 
+								|鍵盤Tab鍵+Shift鍵：回上一個選項。
+							dd
+								i 
+								|Ctrl+P:列印網頁。
+							dd
+								i 
+								|Ctrl+"加號鍵"或Ctrl+"減號鍵":放大或縮小頁面字級。
+					h3.sitemap_title 網站導覽：
+					ol.sitemap_tree
+						li.home
+							a(href="." title="桃園市二手輔具資源站") 桃園市二手輔具資源站
+						li
+							a(href="nabout.html" title="服務簡介") 1.服務簡介
+						li
+							a(href="news.html" title="最新消息") 2.最新消息
+						li
+							a(href="nabout.html" title="輔具回收") 3.輔具回收
+						li
+							a(href="nabout.html" title="輔具借用") 4.輔具借用
+						li
+							a(href="nabout.html" title="輔具維修") 5.輔具維修
+						li
+							a(href="nabout.html" title="意見回饋") 6.意見回饋
+
+
+
+

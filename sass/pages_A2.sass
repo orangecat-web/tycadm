@@ -1,0 +1,627 @@
+@import _layout
+// for focus setting
+=iconPosition
+	i
+		position: relative
+		&::before
+			+fontSize(1.5)
+			color: #0f7c25
+			position: absolute
+			top: -2px
+			left: -1.75rem
+=focus
+	&:focus
+		li
+			background: $link_focus
+			outline:
+				width: 2px
+				style: dashed
+				color: $nav_border
+			color: #000
+=afocus
+	&:focus
+		background: $link_focus
+		outline:
+			width: 2px
+			style: dashed
+			color: $nav_border
+		color: #000
+=list_focus
+	&:focus
+		p
+			background: $link_focus
+			outline:
+				width: 2px
+				style: dashed
+				color: $nav_border
+			color: #000
+=figure
+	&:focus
+		figure
+			background: $link_focus
+			border: none
+			outline:
+				width: 2px
+				style: dashed
+				color: $nav_border
+			color: #000
+
+// editable setting
+div.editable_content
+	a
+		border: 
+			bottom: 
+				width: 2px
+				color: #000
+				style: solid
+		+py(.25)
+		+px(.5)
+		+google_icons(info)
+		i
+			&::before
+				+fontSize(1)
+				color: #000
+				+mr(.25)
+		&:hover
+			background: #a00
+			border: none
+			color: #fff
+			i
+				&::before
+					color: #fff
+h3.form_title
+	+fontSize(1.5)
+	color: #a00
+	+mb(.5)
+	+pl(.15)
+h3.subtitle
+	+fontSize(1.5)
+	color: #a00
+	+mt(2.5)
+	+mb(2)
+div.form_content
+	border: 
+		width: 1px
+		color: #ccc
+		style: solid
+	+mb(4)
+	+p(3)
+	+breakpoint(md)
+		+p(1.5)
+	div.button
+		+tac
+		button
+			border: 
+				width: 0
+				color: #000
+				style: solid
+				radius: 5px
+			color: map-get($button_text, base)
+			+fontWeight(500)
+			+py(.5)
+			+px(1.5)
+			&.reset
+				background: map-get($reset_bg, base)
+				+mr(.5)
+				&:hover
+					background: map-get($reset_bg, hover)
+				&:focus
+					background: map-get($button_bg, focus)
+					color: map-get($button_text, focus)
+					outline:
+						width: 2px
+						style: dashed
+						color: $nav_border
+			&.submit
+				background: map-get($submit_bg, base)
+				+ml(.5)
+				&:hover
+					background: map-get($submit_bg, hover)
+				&:focus
+					background: map-get($button_bg, focus)
+					color: map-get($button_text, focus)
+					outline:
+						width: 2px
+						style: dashed
+						color: $nav_border
+ul.form
+	+row
+	+aic
+	+jcs
+	>li
+		+col(6)
+		+row
+		+aic
+		+jcs
+		+mx(0)
+		+mb(2)
+		+breakpoint(sm)
+			+col(12)
+		label
+			+col-auto
+			+mr(1)
+			+breakpoint(sm)
+				+col(12)
+				+pl(0)
+				+mb(.5)
+		input
+			+cols
+		input[type="radio"]
+			+col-auto
+			+mr(.5)
+		label
+			span
+				color: #f00
+				+pl(.5)
+	li.genders_service, li.title
+		+col(12)
+	li.genders
+		+breakpoint(sm)
+			label
+				+mb(0)
+				&:first-of-type
+					+col(12)
+					+pl(0)
+				+col-auto
+			input
+				&[type="radio"]
+					+col-auto
+	li.location
+		+ais
+		+breakpoint(lg)
+			+col(12)
+		ul.location_select
+			+px(0)
+			li
+				+row
+				+aic
+				+jcs
+				+mx(0)
+				+mb(.5)
+				label
+					+cols
+					+pl(0)
+					span
+						color: #999
+				label[for="RecycleMap-e"]
+					+col-auto
+					+mr(0)
+				select
+					+cols
+					+breakpoint(md)
+						width: 100%
+						+col(12)
+				input
+					&[type="radio"]
+						+breakpoint(sm)
+							+mt(.5)
+	li.address
+		+ais
+		+ass
+		+breakpoint(lg)
+			+col(12)
+		ul.address_cont
+			+cols
+			+row
+			+aic
+			+jcs
+			+breakpoint(md)
+				+px(0)
+			li
+				+col(4)
+				+mb(1)
+				+px(.5)
+				&:first-of-type
+					+pl(0)
+				label
+					+mr(0)
+					+p(0)
+				input, select
+					width: 100%
+			li.addCont
+				+col(12)
+				+pl(0)
+				+pr(.5)
+	li.items
+		+col(12)
+		select
+			+col(3)
+			+breakpoint(sm)
+				+col(12)
+		ul.itemCont
+			width: 100%
+			+row
+			+aic
+			+jcs
+			+mt(1.5)
+			li
+				+col(2)
+				+mb(1.5)
+				+breakpoint(d1024)
+					+col(3)
+				+breakpoint(md)
+					+col(4)
+				+breakpoint(sm)
+					+col(6)
+				div.img
+					height: 100vh
+					max-height: 265px
+					border: 
+						width: 1px
+						color: #ccc
+						style: solid
+					line-height: 0
+					+mb(.75)
+					+p(.25)
+					overflow: hidden
+					display: flex
+					flex-direction: column
+					+aic
+					+jcs
+				input
+					&[type="number"]
+						width: 100%
+				input
+					&:focus + label
+						background: $link_focus
+						outline:
+							width: 2px
+							style: dashed
+							color: $nav_border
+						color: #000
+	li.ContactSevriveOptions
+		+col(3)
+		+row
+		+aic
+		+jcs
+		+breakpoint(d1600)
+			+col(4)
+		+breakpoint(xl)
+			+cols
+		+breakpoint(sm)
+			+col(12)
+		label
+			+col(12)
+			&[for="ContactSevriveOptions"]
+				+mr(0)
+		ul.SevriveOptions
+			+col(12)
+			+row
+			+aic
+			+jcs
+			+mx(0)
+			li
+				+col-auto
+				+aic
+				+jcs
+				+tal
+				>label
+					+px(0)
+	li.notice
+		+col(12)
+		+ais
+		ul.noteCont
+			li
+				input
+					&:focus + label
+						background: $link_focus
+						outline:
+							width: 2px
+							style: dashed
+							color: $nav_border
+						color: #000
+		ul.noticeDot
+			li
+				list-style-type: disc
+				+ml(2)
+	li.CAPTCHA
+		+breakpoint(d1366)
+			+col(8)
+		+breakpoint(xl)
+			+col(9)
+		+breakpoint(lg)
+			+col(10)
+		+breakpoint(md)
+			+col(12)
+		img
+			+col-auto
+			+mx(1)
+		span
+			+ml(.5)
+	
+// receive_address
+section.content
+	+container(w1750)
+	div#content, div#sitemap
+		>div
+			background: #fff
+			border:
+				width: 1px
+				color: #ddd
+				style: solid
+			+py(2)
+			+px(3)
+			+breakpoint(sm)
+				+py(1.5)
+				+px(2)
+	// breadcrumbs
+	div#Breadcrumbs
+		+breadcrumbs
+		+my(1.5)
+	// page title
+	div.title
+		+mb(2)
+		h2
+			+fontSize(2)
+			+tac
+			&::before
+				content: ""
+				border:
+					left:
+						width: 6px
+						color: #a00
+						style: solid
+				+mr(1)
+	// about
+	div#about
+		+row
+		+ais
+		+jcc
+		+mx(0)
+		+mb(3)
+		aside
+			+cols
+			+breakpoint(lg)
+				+col(12)
+			ul
+				+breakpoint(lg)
+					+row
+					+aic
+					+jcc
+					+mx(0)
+					+mb(1.5)
+				+breakpoint(sm)
+					flex-direction: column
+				li
+					background: #ccc
+					+fontSize(1.05)
+					+p(0)
+					margin:
+						bottom: 2px
+					+breakpoint(lg)
+						+cols
+						+mx(.5)
+					+breakpoint(sm)
+						width: 100%
+						+col(12)
+						+mx(0)
+						+mb(.5)
+					a
+						display: block
+						+py(1.25)
+						+px(1)
+						+focus
+						&:hover
+							background: #b90e24
+							color: #fff
+							border:
+								bottom: none
+		div#content
+			+col(10)
+			+breakpoint(lg)
+				+col(12)
+			>div
+				// editable
+				div.editable_content
+					h3
+						+mb(.5)
+					p
+						+mb(1.5)
+	// news
+	// list
+	div#news
+		div.list_tab
+			+container(xl)
+			+mb(3)
+			ul
+				+row
+				+aic
+				+jcc
+				li
+					+col(3)
+					+breakpoint(md)
+						+col(6)
+						+mb(1)
+					p
+						border: 
+							width: 1px
+							color: #000
+							style: solid
+							radius: 10px
+						+tac
+						+py(.25)
+					=list_tab
+						p
+							background: #a00
+							border: 
+								color: #a00
+							color: #fff
+					a.acitve
+						+list_tab
+					a
+						&:hover
+							+list_tab
+						+list_focus
+						+tac
+		ul.list
+			+row
+			+aic
+			+jcb
+			+mx(0)
+			li
+				+col(6)
+				border: 
+					bottom: 
+						width: 1px
+						color: #ccc
+						style: dashed
+				+mb(1.5)
+				+pb(1.5)
+				&:last-of-type, &:nth-last-of-type(2)
+					border: none
+				p.date
+					+row
+					+aic
+					+jcs
+					color: #a00
+					+py(.25)
+					+google_icons(clock)
+					i, span
+						+col-auto
+					i
+						&::before
+							+fontSize(1)
+							+mr(.25)
+				p.list_title
+					+mline
+					+pl(.25)
+				a
+					&:hover
+						p
+							background: #a00
+							color: #fff
+					+list_focus
+		ul.pagination
+			+pagination
+		// detail
+		div#content
+			+mb(2)
+			>div
+				// editable
+				div.editable_content
+					h3
+						+mb(.5)
+					p
+						+mb(1.5)
+		div.back_list
+			+tac
+			+mb(4)
+			a
+				background: #000
+				border:
+					radius: 5px
+				color: #fff
+				+py(.5)
+				+px(1.5)
+				&:hover
+					background: #a00
+	// contact
+	div#contact
+		+mb(3)
+		div.contact_info
+			+row
+			+ais
+			+jcb
+			+mx(0)
+			div.info_content
+				+col(4)
+				dl
+					dt
+						+fontSize(1.25)
+						color: #0f7c25
+						+mb(1)
+					dd
+						+mb(.75)
+						+pl(1.5)
+					dd.location
+						+google_icons(location, round)
+						+iconPosition
+					dd.phone
+						+google_icons(phone, round)
+						+iconPosition
+					dd.fax
+						+google_icons(fax, round)
+						+iconPosition
+					dd.email
+						+google_icons(email, round)
+						+iconPosition
+					dd.clock
+						+google_icons(clock, round)
+						+iconPosition
+			.googlemap
+				+col(8)
+				iframe
+					width: 100%
+					height: 350px
+					border: none
+	// sitemap
+	div#sitemap
+		>div
+			div.sitemap_intro
+				+mb(1.5)
+				div.intro
+					+my(1.5)
+					dl
+						+mb(2)
+						dt
+							+fontSize(1.5)
+							color: #4eb346
+							+mb(1)
+						dd
+							+pl(3)
+							+google_icons(record, base)
+							i
+								position: relative
+								&::before
+									+fontSize(1.25)
+									color: #666
+									position: absolute
+									top: 0
+									left: -1.5rem
+				h3.sitemap_title
+					+fontSize(1.5)
+					color: #4eb346
+					+mb(.5)
+				ol.sitemap_tree
+					width: 100%
+					background: #fffdf3
+					border:
+						width: 3px
+						color: #0f7c25
+						style: solid
+					+py(.5)
+					+px(.75)
+					li
+						border:
+							bottom: 
+								width: 1px
+								color: #ccc
+								style: solid
+						+fontSize(1.5)
+						&:last-of-type
+							border: none
+						a
+							display: block
+							color: #0f7c25
+							+py(1)
+							+px(.5)
+							&:focus
+								text-decoration: underline
+					li.home
+						background: #0f7c25
+						border-radius: 10px
+						color: #fff
+						+tac
+						+mb(1.5)
+						a
+							color: #fff
+							border-radius: 5px
+
+
+
+
+
+
+
+
+

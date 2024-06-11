@@ -1,0 +1,240 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 輔具回收 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 輔具回收
+		.title
+			h2 輔具回收
+		.guide_title
+			a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+		#recycle
+			h3.form_title 輔具回收申請表
+			.form_content
+				form(role="form" method="post" name="recycle" id="recycle_form")
+					ul.form
+						li
+							label(for="RecycleDate") 申請日期 
+								span(aria-label="必填") 必填
+							input(type="date" id="RecycleDate" name="time" title="申請日期" aria-required="true")
+						li
+							label(for="RecycleName") 您的姓名 
+								span(aria-label="必填") 必填
+							input(type="text" id="RecycleName" name="name" maxlength="50" placeholder="請輸入您的姓名" title="您的姓名" aria-required="true")
+						li.ContactNum
+							label(for="RecyclePhone") 連絡電話 
+								span(aria-label="必填") 必填
+							input(type="text" id="RecyclePhone" name="RecyclePhone" placeholder="請輸入純數字" title="連絡電話" aria-required="true")
+						li.genders
+							label(for="Recyclegender") 性別 
+								span(aria-label="必填") 必填
+							input(type="radio" id="RecyclegenderM" name="genders" title="先生" aria-required="true")
+							label(for="RecyclegenderM") 先生
+							input(type="radio" id="RecyclegenderF" name="genders" title="小姐" aria-required="true")
+							label(for="RecyclegenderF") 小姐
+						li.location
+							label(for="RecycleMap") 回收地點
+								span 必填
+							ul.location_select
+								li
+									input(type="radio" id="RecycleMap-a" name="recyclemmap" title="二手輔具資源站" aria-required="true")
+									label(for="RecycleMap-a") 二手輔具資源站 #[span 桃園市八德區崁頂路360號]
+								li
+									input(type="radio" id="RecycleMap-b" name="recyclemmap" title="到宅" aria-required="true")
+									label(for="RecycleMap-b") 到宅
+								li
+									input(type="radio" id="RecycleMap-c" name="recyclemmap" title="北區輔具資源中心" aria-required="true")
+									label(for="RecycleMap-c") 北區輔具資源中心 #[span 桃園市八德區介壽路二段901巷49弄91號]
+								li
+									input(type="radio" id="RecycleMap-d" name="recyclemmap" title="南區輔具資源中心" aria-required="true")
+									label(for="RecycleMap-d") 南區輔具資源中心 #[span 桃園市龍潭區中豐路298號2樓]
+								li
+									input(type="radio" id="RecycleMap-e" name="recyclemmap" title="其他據點" aria-required="true")
+									label(for="RecycleMap-e" aria-title="請選擇" aria-label="請選擇") 其他據點
+									select(name="RecycleMap-e" id="RecycleMap")
+										option(value="其他(請參照本站據點服務時間)") 其他(請參照本站據點服務時間)
+										option(value="據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)") 據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)
+										option(value="據點『楊梅區』- 樂活協會 (楊梅區校前路32巷25-1號)") 據點『楊梅區』- 樂活協會 (楊梅區校前路32巷25-1號)
+										option(value="據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)") 據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)
+										option(value="據點『中壢區』- 中壢區永福社區活動中心 (中壢區南園二路90號)") 據點『中壢區』- 中壢區永福社區活動中心 (中壢區南園二路90號)
+										option(value="據點『桃園區』- 桃園區龍岡市民活動中心-土地公廟 (桃園區國豐二街6號)") 據點『桃園區』- 桃園區龍岡市民活動中心-土地公廟 (桃園區國豐二街6號)
+										option(value="據點『復興區』- 澤仁里辦公處 (復興區中正路168-1號)") 據點『復興區』- 澤仁里辦公處 (復興區中正路168-1號)
+										option(value="巡迴點『楊梅區』- 脊髓損傷潛能發展中心 (楊梅區快速路5段701號)") 巡迴點『楊梅區』- 脊髓損傷潛能發展中心 (楊梅區快速路5段701號)
+										option(value="巡迴點『新屋區』- 署立桃園醫院新屋分院 (新屋區新福二路6號)") 據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)
+										option(value="巡迴點『中壢區』- 夢幻公園 (中壢區榮民路396號)") 巡迴點『中壢區』- 夢幻公園 (中壢區榮民路396號)
+										option(value="巡迴點『龜山區』- 陸光活動中心 (龜山區陸光路79號)") 巡迴點『龜山區』- 陸光活動中心 (龜山區陸光路79號)
+										option(value="巡迴點『蘆竹區』- 蘆竹區公所 (蘆竹區南崁路150號)") 巡迴點『蘆竹區』- 蘆竹區公所 (蘆竹區南崁路150號)
+										option(value="巡迴點『中壢區』- 精忠國宅活動中心 (中壢區莊敬里精忠二街42號)") 巡迴點『中壢區』- 精忠國宅活動中心 (中壢區莊敬里精忠二街42號)
+										option(value="巡迴點『龍潭區』- 龍元宮 (龍潭區龍潭里東龍路246號)") 巡迴點『龍潭區』- 龍元宮 (龍潭區龍潭里東龍路246號)
+										option(value="巡迴點『大溪區』- 僑愛社區 (大溪區僑愛一街1號)") 巡迴點『大溪區』- 僑愛社區 (大溪區僑愛一街1號)
+										option(value="巡迴點『大園區』- 大園區衛生所 (大園區中正西路19號)") 巡迴點『大園區』- 大園區衛生所 (大園區中正西路19號)
+										option(value="巡迴點『蘆竹區』- 蘆竹區營盤市民活動中心 (蘆竹區中山路108巷21號)") 巡迴點『蘆竹區』- 蘆竹區營盤市民活動中心 (蘆竹區中山路108巷21號)
+						li.address
+							label(for="Recycleaddress") 回收地址
+							ul.address_cont
+								li
+									input(type="text" id="RecycleZipcode" name="RecycleZipcode" placeholder="郵遞區號" title="郵遞區號")
+									label(for="RecycleZipcode")
+								li
+									label(for="RecycleCity" aria-title="請選擇" aria-label="請選擇")
+										span.sr-only 請選擇
+									select(id="RecycleCity" name="RecycleCity")
+										option(value="臺北市" data-index="0") 臺北市
+										option(value="基隆市" data-index="1") 基隆市
+										option(value="新北市" data-index="2") 新北市
+										option(value="宜蘭縣" data-index="3") 宜蘭縣
+										option(value="桃園市" data-index="4") 桃園市
+										option(value="新竹市" data-index="5") 新竹市
+										option(value="新竹縣" data-index="6") 新竹縣
+										option(value="苗栗縣" data-index="7") 苗栗縣
+										option(value="臺中市" data-index="8") 臺中市
+										option(value="彰化縣" data-index="9") 彰化縣
+										option(value="南投縣" data-index="10") 南投縣
+										option(value="嘉義市" data-index="11") 嘉義市
+										option(value="嘉義縣" data-index="12") 嘉義縣
+										option(value="雲林縣" data-index="13") 雲林縣
+										option(value="臺南市" data-index="14") 臺南市
+										option(value="高雄市" data-index="15") 高雄市
+										option(value="澎湖縣" data-index="16") 澎湖縣
+										option(value="金門縣" data-index="17") 金門縣
+										option(value="屏東縣" data-index="18") 屏東縣
+										option(value="臺東縣" data-index="19") 臺東縣
+										option(value="花蓮縣" data-index="20") 花蓮縣
+										option(value="連江縣" data-index="21") 連江縣
+								li
+									label(for="RecycleCounty" aria-title="請選擇" aria-label="請選擇")
+										span.sr-only 請選擇
+									select(id="RecycleCounty" name="RecycleCounty")
+										option(value="" title="title" name="RecycleCounty" selected) ---
+								li.addCont
+									label(for="RecycleAdd" title="請輸入地址")
+									input(type="text" id="RecycleAdd" name="RecycleAdd" placeholder="請輸入地址" title="聯絡地址")
+						li.items
+							label(for="RecycleItemsMenu" id="RecycleItemsMenu") 回收輔具類型(可複選) 
+								span(aria-label="必填") 必填
+							select(id="RecycleItemsMenu" name="RecycleItemsMenu")
+								option(value="1") 行走輔具
+								option(value="2") 輪椅類
+								option(value="3") 氣墊床
+								option(value="4") 照顧床
+								option(value="5") 便盆椅
+								option(value="6") 洗澡椅
+								option(value="7") 照顧輔具
+								option(value="8") 特製輔具
+							ul.itemCont
+								li
+									.img
+										img(src="upload/20200427135425.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20210319155903.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="checkbox" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+						li.notice
+							label(for="RecycleNote") 回收須知
+							ul.noteCont
+								li
+									input(type="checkbox" id="RecycleNote01" name="RecycleNote01" title="本站回收結構與功能正常之輔具，由現場技師評估輔具狀況再進行回收。")
+									label(for="RecycleNote01") 本站回收結構與功能正常之輔具，由現場技師評估輔具狀況再進行回收。
+								li
+									input(type="checkbox" id="RecycleNote02" name="RecycleNote02" title="本站到宅回收輔具服務皆一樓收取。")
+									label(for="RecycleNote02") 本站到宅回收輔具服務皆一樓收取。
+								li
+									input(type="checkbox" id="RecycleNote03" name="RecycleNote03" title="本站不回收輔具以外之產品（如尿布、抽痰管、抽痰杯....等）、 醫療床不回收床墊、棉被、枕頭(因屬個人衛生用品）")
+									label(for="RecycleNote03") 本站不回收輔具以外之產品（如尿布、抽痰管、抽痰杯....等）、 醫療床不回收床墊、棉被、枕頭(因屬個人衛生用品）
+						li.CAPTCHA
+							label(for="CAPTCHACode") 驗證碼 
+								span(aria-label="必填") 必填
+							input(type="text" id="CAPTCHACode" name="CAPTCHACode" title="驗證碼" aria-required="true")
+							img#imgcode(src="captcha/securimage_show.jpg" alt="請輸入驗證碼")
+							a(href="javascript:;" title="語音播放")
+								span #[i] 語音播放
+					.button
+						button.reset(type="button" id="reset" name="reset") 清除重填
+						button.submit(type="button" id="recycle" name="recycle") 確認送出
+

@@ -1,0 +1,137 @@
+doctype
+//orangeCat template v4.0
+html(lang="zh-Hant")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="x-ua-compatible" content="IE=edge, chrome=1")
+		meta(http-equiv="content-language" content="zh-Hant-TW")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		//- for iOS
+		meta(name="apple-mobile-web-app-capable" content="yes")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black")
+		meta(name="format-detection" content="telephone=no")
+		meta(name="format-detection" content="address=no")
+		meta(name="author" content="桃園市二手輔具資源站")
+		meta(name="copyright" content="桃園市二手輔具資源站")
+		meta(name="description" content="桃園市二手輔具資源站")
+		meta(name="Accessible_website" content="本網站通過A檢測等級無障礙網頁檢測")
+		meta(name="keyword" content="桃園市二手輔具資源站")
+		meta(property="og:title" content="桃園市二手輔具資源站")
+		meta(property="og:url" content="")
+		meta(property="og:image" content="")
+		//- meta(property="fb:admins" content="Facebook numberic ID")
+		meta(name="robots" content="noindex,nofollow")
+		link(rel="icon" href="favicon.ico?v=1.1")
+		block siteTitle
+			title 桃園市二手輔具資源站
+		block siteCSS
+		noscript
+			link(href="css/noscript.css" type="text/css" rel="stylesheet")
+	body
+		//- header
+		header#HEADER
+			noscript.noscript 您的瀏覽器不支援javascript，但不影響網頁內容陳述，如開啟JavaScript，可得到視覺與特效的最佳瀏覽。如需要選擇字級大小，請改用鍵盤 &quot;Ctrl&quot; + &quot;加號鍵&quot; 或 &quot;Ctrl&quot; + &quot;減號鍵&quot;，如需要回到上一頁可使用瀏覽器提供的 &quot;Alt&quot; + &quot;左方向鍵(←)&quot;，列印可使用瀏覽器提供的 (Ctrl + P) 功能。
+			.topper
+				a#skip_to_content(href="#main_content" name="skip_to_content" title="移至主要內容區塊") :::
+				ul.top_nav
+					li
+						a.guide_title(href="#U" accesskey="U" name="U" title="上方導覽區") :::
+					li
+						a(href="." title="回首頁") 回首頁
+					li
+						a(href="sitemap.html" title="網站導覽") 網站導覽
+					li
+						a(href="#" title="單位登入") 單位登入
+			.navbar
+				//- logo
+				.logo
+					h1
+						a(href="." title="桃園市二手輔具資源站")
+							img(src="images/logo.jpg", alt="桃園市二手輔具資源站 logo")
+				// nav desktop
+				nav.desktop#NAV(role="navigation" aria-label="主要功能選單")
+					noscript.noscript
+						| 若您無法點選選單或子選單的超連結，請點選
+						a(href="sitemap.html") 網站導覽
+					ul.nav
+						li
+							a.guide_title(href="#M" accesskey="M" name="M" id="main_nav" title="主選單區域") :::
+						li
+							a(href="about.html" title="移至服務簡介") 服務簡介
+						li
+							a(href="news.html" title="移至最新消息") 最新消息
+						li
+							a(href="recycle.html" title="移至輔具回收") 輔具回收
+						li
+							a(href="borrow.html" title="移至輔具借用") 輔具借用
+						li
+							a(href="service.html" title="移至輔具維修") 輔具維修
+						li
+							a(href="contact.html" title="移至意見回饋") 意見回饋
+				// nav mobile
+				div.mobile
+					.navOpen
+						button.js-open-left-slidebar.navOpen
+							img(src="images/btn_open.svg", alt="open nav")
+					div(off-canvas="slidebar-1 left overlay")
+						button.js-close-left-slidebar.navClose
+							img(src="images/btn_close.svg", alt="close nav")
+						ul.nav
+							li
+								a(href="about.html" title="移至服務簡介") 服務簡介
+							li
+								a(href="news.html" title="移至最新消息") 最新消息
+							li
+								a(href="recycle.html" title="移至輔具回收") 輔具回收
+							li
+								a(href="borrow.html" title="移至輔具借用") 輔具借用
+							li
+								a(href="service.html" title="移至輔具維修") 輔具維修
+							li
+								a(href="contact.html" title="移至意見回饋") 意見回饋
+			block header
+		main
+			block container
+		footer#FOOTER
+			.guide_title
+				a.guide_title(href="#Z" accesskey="Z" name="Z" title="下方功能區塊") :::
+			ul.footer_menu
+				li
+					a(href="about.html" title="移至服務簡介") 服務簡介
+				li
+					a(href="news.html" title="移至最新消息") 最新消息
+				li
+					a(href="recycle.html" title="移至輔具回收") 輔具回收
+				li
+					a(href="borrow.html" title="移至輔具借用") 輔具借用
+				li
+					a(href="service.html" title="移至輔具維修") 輔具維修
+				li
+					a(href="contact.html" title="移至意見回饋") 意見回饋
+			div.service_info
+				p 服務時間：週一 至 週五 上午8:00 - 12:00 下午1:00 - 5:00 本中心可提供非上班時間服務(夜間或假日)，請先來電洽詢及預約確認。
+			ul.contact_info
+				li 電話： 03-3688793
+				li 傳真：03-3683464
+				li
+					a(href="mailto:datk.tycadm@gmail.com" title="E-mail") E-mail：datk.tycadm@gmail.com
+				li
+					a(href="https://www.google.com.tw/maps/place/%E6%A1%83%E5%9C%92%E5%B8%82%E4%BA%8C%E6%89%8B%E8%BC%94%E5%85%B7%E8%B3%87%E6%BA%90%E7%AB%99/@24.939377,121.2638493,17z/data=!3m1!4b1!4m6!3m5!1s0x3468196a45b65b29:0xe98a9992dbc63938!8m2!3d24.939377!4d121.2638493!16s%2Fg%2F11j8v76vrr?hl=zh-TW&entry=ttu" title="桃園市二手輔具資源站地址(另開視窗)" target="_blank") 地址： 桃園市八德區崁頂路360號
+				li
+					a(href="#" title="移至網站無障礙規範及標章(開啟新視窗)" target="_blank")
+						img(src="images/accessibility.png" alt="通過AA等級無障礙網頁檢測")
+			//- copyright
+			.copyright Copyright &copy;
+				script.
+						document.write(new Date().getFullYear())
+				|  桃園市二手輔具資源站 All rights reserved.
+		.goTop.hide
+			a.goTop.jq-goTop(href="#" titile="回最上層")
+				p
+					img(src="images/btn_gotop.svg", alt="按鈕回最上層")
+		// basic script
+		script(src="js/jquery-3.5.0.js")
+		script(src="js/nav/slidebars.js")
+		script(src="js/nav/slidebars-scripts.js")
+		script(src="js/basic.js")
+		block js

@@ -1,0 +1,24 @@
+//- 上圖下文列表內容
+//- href=連結, img=圖檔位置, title=文章標題, text=內容描述, 順序不能錯誤 會找不到東西
+mixin img_list01(href, title, img, text)
+	a(href=href, title="連結標題")
+		figure
+			.img
+				img(src=img, alt="圖說")
+			figcaption
+				h3=title
+				p.intro_text=text
+
+//- 圖文重疊列表內容
+//- 連結在裡面
+//- href=連結, img=圖檔位置, title=文章標題, text=內容描述, 順序不能錯誤 會找不到東西
+mixin img_list02(href, title, img, text)
+	figure
+		.img
+			img(src=img, alt="圖說")
+		figcaption
+			h3
+				a(href=href, title="連結標題")=title
+			p.intro_text=text
+			p.more_link
+				a(href=href, title="more") #[span more]

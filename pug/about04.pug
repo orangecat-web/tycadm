@@ -1,0 +1,25 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 服務簡介 -服務簡介 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 服務簡介
+		.title
+			h2 服務簡介
+		#about
+			include _about_aside.pug
+			#content
+				div
+					.guide_title
+						a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+					.editable_content
+						img(src="upload/20200723121200.png" alt="桃園市二手輔具資源站借用流程借用流程需網站系統登記、電話登記、二手輔具資源站南區、北區輔具資源中心登記三擇一即可,借用資格確認(特殊輔具需治療師評估並轉介至南北區輔具資源中心),輔具庫存確認如沒有庫存排入名單待庫存通知,反之有庫存直接通知取件可至輔具中心、巡迴點、據點借用 , 如借用滿三個月後電話詢問是否續借" title="桃園市二手輔具資源站借用流程借用流程需網站系統登記、電話登記、二手輔具資源站南區、北區輔具資源中心登記三擇一即可,借用資格確認(特殊輔具需治療師評估並轉介至南北區輔具資源中心),輔具庫存確認如沒有庫存排入名單待庫存通知,反之有庫存直接通知取件可至輔具中心、巡迴點、據點借用 , 如借用滿三個月後電話詢問是否續借")

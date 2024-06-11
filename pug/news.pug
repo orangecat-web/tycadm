@@ -1,0 +1,100 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 最新消息 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 最新消息
+		.title
+			h2 最新消息
+		.guide_title
+			a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+		#news
+			//- list
+			.list_tab
+				ul
+					li
+						a.acitve(href="#" title="全部顯示")
+							p 全部顯示
+					li
+						a(href="#" title="訊息公告")
+							p 訊息公告
+					li
+						a(href="#" title="據點、巡迴點服務")
+							p 據點、巡迴點服務
+					li
+						a(href="#" title="輔具資訊")
+							p 輔具資訊
+			ul.list
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 【置頂】滿意度調查表
+				li
+					p.date
+						i
+						span 2024.04.25
+					a(href="news_detail.html" title="【置頂】滿意度調查表")
+						p.list_title 長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試長度測試
+			+pagination
+			//- detail
+
+

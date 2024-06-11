@@ -1,0 +1,25 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 維修流程 -服務簡介 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 服務簡介
+		.title
+			h2 維修流程
+		#about
+			include _about_aside.pug
+			#content
+				div
+					.guide_title
+						a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+					.editable_content
+						img(src="upload/20200720111416.png" alt="桃園市二手輔具資源站維修流程維修流程分為巡迴點據點、網站登記、電話登記、親送,巡迴點據點可直接評估輔具損壞狀況,網站登記、電話登記、親送需送至二手輔具資源,其中親送又可以到南區、北區輔具資源中心待二手輔具站取件,評估輔具損壞狀況如可以維修可即時維修,但經過評估無法及時維修輔具留站維修通知取件方可結案" title="桃園市二手輔具資源站維修流程維修流程分為巡迴點據點、網站登記、電話登記、親送,巡迴點據點可直接評估輔具損壞狀況,網站登記、電話登記、親送需送至二手輔具資源,其中親送又可以到南區、北區輔具資源中心待二手輔具站取件,評估輔具損壞狀況如可以維修可即時維修,但經過評估無法及時維修輔具留站維修通知取件方可結案")

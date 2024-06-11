@@ -1,0 +1,23 @@
+// Orange's web template accessibility v1.0
+// "=" 等同 "@mixin"
+// @function = 宣告運算式開始沒這個不會動可能會造成整個 SASS 錯誤, margin = 運算式名稱類似 ID 之類的東西, ($count: 1) 計算式預設值
+
+// sr-only
+=sr-only
+	width: 1px
+	height: 1px
+	border: 0
+	font-size: 0.8125rem
+	letter-spacing: 0.05em
+	white-space: nowrap
+	margin: -1px
+	padding: 0
+	position: absolute
+	clip: rect(1px, 1px, 1px, 1px)
+	overflow: hidden
+	&:focus
+		width: auto
+		height: auto
+		margin: 0
+		clip: auto
+		overflow: visible

@@ -1,0 +1,25 @@
+//- Key visual noscript 廣告輪播替代方案
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+	noscript
+		link(href="css/noscript.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 廣告輪播替代方案 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	.return_form_noscript
+		a(href="index.html#KeyVisual") 返回原頁面
+	#KeyVisual.noscript
+		div
+			a(href="#" title="圖片解說")
+				img(src="upload/20200616094714.jpg" title="圖片解說" alt="圖片解說")
+		div
+			a(href="#" title="圖片解說")
+				img(src="upload/20200616094714.jpg" title="圖片解說" alt="圖片解說")
+		div
+			a(href="#" title="圖片解說")
+				img(src="upload/20200616094714.jpg" title="圖片解說" alt="圖片解說")
+	.return_form_noscript
+		a(href="index.html#KeyVisual") 返回原頁面

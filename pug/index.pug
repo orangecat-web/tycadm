@@ -1,0 +1,261 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/index.min.css" type="text/css" rel="stylesheet")
+	link(href="css/jquery.bxslider.css" type="text/css" rel="stylesheet")
+block container
+	// slider
+	.slider#KeyVisual
+		noscript.noscript
+			|若您看不到廣告輪播的圖片，"
+			a(href="key_visual_noscript.html" title="廣告輪播替代方案") 點此
+			|"可以瀏覽廣告輪播替代方案。
+		div
+			a(href="#" title="圖片解說")
+				img(src="upload/20200616094714.jpg" title="圖片解說" alt="圖片解說")
+		div
+			a(href="#" title="圖片解說")
+				img(src="upload/20200616094714.jpg" title="圖片解說" alt="圖片解說")
+		div
+			a(href="#" title="圖片解說")
+				img(src="upload/20200616094714.jpg" title="圖片解說" alt="圖片解說")
+	section.content
+		.guide_title
+			a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+		.row
+			// news
+			.news
+				.title
+					h2 最新消息
+				ul.news
+					a(href="#" title="轉至【置頂】滿意度調查表") 
+						li
+							span 2024.03.26
+							p 【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表【置頂】滿意度調查表
+					a(href="#" title="轉至【置頂】滿意度調查表") 
+						li
+							span 2024.03.26
+							p 【置頂】滿意度調查表
+					a(href="#" title="轉至【置頂】滿意度調查表") 
+						li
+							span 2024.03.26
+							p 【置頂】滿意度調查表
+					a(href="#" title="轉至【置頂】滿意度調查表") 
+						li
+							span 2024.03.26
+							p 【置頂】滿意度調查表
+					a(href="#" title="轉至【置頂】滿意度調查表") 
+						li
+							span 2024.03.26
+							p 【置頂】滿意度調查表
+			//calendar
+			.calendar
+				.title
+					h2 月曆
+				iframe#calendariframe(name="calendariframe" title="桃園市二手輔具資源站採用Google行事曆,顯示當月分南區、北區據點服務時間以及時段" src="https://calendar.google.com/calendar/embed?height=330&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTaipei&amp;src=ZGF0ay50eWNhZG0uc2RAZ21haWwuY29t&amp;src=emgudGFpd2FuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%230B8043&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;showPrint=0" style="border-width:0" height="330" frameborder="0" scrolling="no")
+				span
+					sup *
+					| 桃園市二手輔具資源站採用Google行事曆,顯示當月分南區、北區據點服務時間以及時段
+			// side link
+			.side_link
+				ul.links
+					a(href="#" title="轉至輔具回收") 
+						li.recycle 
+							i
+							| 輔具回收
+					a(href="#" title="轉至輔具借用") 
+						li.borrow
+							i
+							| 輔具借用
+					a(href="#" title="轉至輔具維修") 
+						li.service
+							i
+							| 輔具維修
+					a(href="#" title="轉至回收徵信") 
+						li.rank_query
+							i
+							| 回收徵信
+		// booking
+		.booking
+			.title
+				h2 線上預約
+			ul.list
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200427135425.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20210319155903.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+				li
+					a(href="#" title="轉至")
+						figure
+							.img
+								img(src="upload/20200511131141.jpg" alt="圖說")
+							figcaption
+								p 一般輪椅
+								p.more
+									span
+										i
+										| 我要預約
+		// links
+		.links
+			.title
+				h2 友善連結
+			ul.links
+				li
+					a(href="#" title="#" target="_blank")
+						figure
+							.img
+								img(src="upload/20200427135425.jpg" alt="圖說")
+							figcaption 桃園市政府社會局
+				li
+					a(href="#" title="#" target="_blank")
+						figure
+							.img
+								img(src="upload/20200427135425.jpg" alt="圖說")
+							figcaption 桃園市政府社會局
+				li
+					a(href="#" title="#" target="_blank")
+						figure
+							.img
+								img(src="upload/20200427135425.jpg" alt="圖說")
+							figcaption 桃園市政府社會局
+				li
+					a(href="#" title="#" target="_blank")
+						figure
+							.img
+								img(src="upload/20200427135425.jpg" alt="圖說")
+							figcaption 桃園市政府社會局
+				li
+					a(href="#" title="#" target="_blank")
+						figure
+							.img
+								img(src="upload/20200427135425.jpg" alt="圖說")
+							figcaption 桃園市政府社會局
+block js
+	script(src="js/bxslider/jquery.bxslider.js")
+	script.
+		$(".slider").bxSlider({
+			auto: false,
+			hideControlOnEnd: true,
+			autoHover: true,
+			nextText: '下一張',
+			prevText: '上一張',
+			keyboardEnabled: true,
+			infiniteLoop: false,
+		});

@@ -1,0 +1,248 @@
+//- 基礎模組
+extends _base.pug
+block siteCSS
+	link(href="css/pages_A2.min.css" type="text/css" rel="stylesheet")
+block siteTitle
+	title 輔具維修 - 桃園市二手輔具資源站
+block container
+	include _tools/_tools.pug
+	// Breadcrumbs
+	section.content
+		#Breadcrumbs
+			ul.breadcrumbs
+				+breadcrumbs('首頁', '.', '回首頁')
+				li
+					span 輔具維修
+		.title
+			h2 輔具維修
+		.guide_title
+			a.guide_title(href="#C" accesskey="C" name="C" id="main_content" title="中央內容區") :::
+		#service
+			h3.form_title 輔具維修申請表
+			.form_content
+				form(role="form" method="post" name="service" id="service_form")
+					ul.form
+						li
+							label(for="ServiceDate") 申請日期
+								span(aria-label="必填") 必填
+							input(type="date" id="ServiceDate" name="time" title="申請日期" aria-required="true")
+						li
+							label(for="ServiceName") 您的姓名
+								span(aria-label="必填") 必填
+							input(type="text" id="ServiceName" name="name" maxlength="50" placeholder="請輸入您的姓名" title="您的姓名" aria-required="true")
+						li
+							label(for="userid") 身分證字號
+								span(aria-label="必填") 必填
+							input(type="text" id="userid" name="cardid" maxlength="50" placeholder="請輸入使用者姓名" title="使用者姓名" aria-required="true")
+						li
+							label(for="servicePhone") 連絡電話
+								span(aria-label="必填") 必填
+							input(type="text" id="servicePhone" name="servicePhone" placeholder="請輸入純數字" title="連絡電話" aria-required="true")
+						li.genders_service
+							label(for="servicegender") 性別
+								span(aria-label="必填") 必填
+							input(type="radio" id="servicegenderM" name="genders" title="先生" aria-required="true")
+							label(for="servicegenderM") 先生
+							input(type="radio" id="servicegenderF" name="genders" title="小姐" aria-required="true")
+							label(for="servicegenderF") 小姐
+						li.location
+							label(for="serviceMap") 回收地點
+								span 必填
+							ul.location_select
+								li
+									input(type="radio" id="serviceMap-a" name="servicemmap" title="二手輔具資源站" aria-required="true")
+									label(for="serviceMap-a") 二手輔具資源站 #[span 桃園市八德區崁頂路360號]
+								li
+									input(type="radio" id="serviceMap-b" name="servicemmap" title="到宅" aria-required="true")
+									label(for="serviceMap-b") 到宅
+								li
+									input(type="radio" id="serviceMap-c" name="servicemmap" title="北區輔具資源中心" aria-required="true")
+									label(for="serviceMap-c") 北區輔具資源中心 #[span 桃園市八德區介壽路二段901巷49弄91號]
+								li
+									input(type="radio" id="serviceMap-d" name="servicemmap" title="南區輔具資源中心" aria-required="true")
+									label(for="serviceMap-d") 南區輔具資源中心 #[span 桃園市龍潭區中豐路298號2樓]
+								li
+									input(type="radio" id="serviceMap-e" name="servicemmap" title="其他據點" aria-required="true")
+									label(for="serviceMap-e" aria-title="請選擇" aria-label="請選擇") 其他據點
+									select(name="serviceMap-e" id="serviceMap")
+										option(value="其他(請參照本站據點服務時間)") 其他(請參照本站據點服務時間)
+										option(value="據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)") 據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)
+										option(value="據點『楊梅區』- 樂活協會 (楊梅區校前路32巷25-1號)") 據點『楊梅區』- 樂活協會 (楊梅區校前路32巷25-1號)
+										option(value="據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)") 據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)
+										option(value="據點『中壢區』- 中壢區永福社區活動中心 (中壢區南園二路90號)") 據點『中壢區』- 中壢區永福社區活動中心 (中壢區南園二路90號)
+										option(value="據點『桃園區』- 桃園區龍岡市民活動中心-土地公廟 (桃園區國豐二街6號)") 據點『桃園區』- 桃園區龍岡市民活動中心-土地公廟 (桃園區國豐二街6號)
+										option(value="據點『復興區』- 澤仁里辦公處 (復興區中正路168-1號)") 據點『復興區』- 澤仁里辦公處 (復興區中正路168-1號)
+										option(value="巡迴點『楊梅區』- 脊髓損傷潛能發展中心 (楊梅區快速路5段701號)") 巡迴點『楊梅區』- 脊髓損傷潛能發展中心 (楊梅區快速路5段701號)
+										option(value="巡迴點『新屋區』- 署立桃園醫院新屋分院 (新屋區新福二路6號)") 據點『平鎮區』- 國宏幸福認知小站 (平鎮區大興街26號)
+										option(value="巡迴點『中壢區』- 夢幻公園 (中壢區榮民路396號)") 巡迴點『中壢區』- 夢幻公園 (中壢區榮民路396號)
+										option(value="巡迴點『龜山區』- 陸光活動中心 (龜山區陸光路79號)") 巡迴點『龜山區』- 陸光活動中心 (龜山區陸光路79號)
+										option(value="巡迴點『蘆竹區』- 蘆竹區公所 (蘆竹區南崁路150號)") 巡迴點『蘆竹區』- 蘆竹區公所 (蘆竹區南崁路150號)
+										option(value="巡迴點『中壢區』- 精忠國宅活動中心 (中壢區莊敬里精忠二街42號)") 巡迴點『中壢區』- 精忠國宅活動中心 (中壢區莊敬里精忠二街42號)
+										option(value="巡迴點『龍潭區』- 龍元宮 (龍潭區龍潭里東龍路246號)") 巡迴點『龍潭區』- 龍元宮 (龍潭區龍潭里東龍路246號)
+										option(value="巡迴點『大溪區』- 僑愛社區 (大溪區僑愛一街1號)") 巡迴點『大溪區』- 僑愛社區 (大溪區僑愛一街1號)
+										option(value="巡迴點『大園區』- 大園區衛生所 (大園區中正西路19號)") 巡迴點『大園區』- 大園區衛生所 (大園區中正西路19號)
+										option(value="巡迴點『蘆竹區』- 蘆竹區營盤市民活動中心 (蘆竹區中山路108巷21號)") 巡迴點『蘆竹區』- 蘆竹區營盤市民活動中心 (蘆竹區中山路108巷21號)
+						li.address
+							label(for="serviceaddress") 回收地址
+							ul.address_cont
+								li
+									input(type="text" id="serviceZipcode" name="serviceZipcode" placeholder="郵遞區號" title="郵遞區號")
+									label(for="serviceZipcode")
+								li
+									label(for="serviceCity")
+										span.sr-only 請選擇
+									select(id="serviceCity" name="serviceCity")
+										option(value="臺北市" data-index="0") 臺北市
+										option(value="基隆市" data-index="1") 基隆市
+										option(value="新北市" data-index="2") 新北市
+										option(value="宜蘭縣" data-index="3") 宜蘭縣
+										option(value="桃園市" data-index="4") 桃園市
+										option(value="新竹市" data-index="5") 新竹市
+										option(value="新竹縣" data-index="6") 新竹縣
+										option(value="苗栗縣" data-index="7") 苗栗縣
+										option(value="臺中市" data-index="8") 臺中市
+										option(value="彰化縣" data-index="9") 彰化縣
+										option(value="南投縣" data-index="10") 南投縣
+										option(value="嘉義市" data-index="11") 嘉義市
+										option(value="嘉義縣" data-index="12") 嘉義縣
+										option(value="雲林縣" data-index="13") 雲林縣
+										option(value="臺南市" data-index="14") 臺南市
+										option(value="高雄市" data-index="15") 高雄市
+										option(value="澎湖縣" data-index="16") 澎湖縣
+										option(value="金門縣" data-index="17") 金門縣
+										option(value="屏東縣" data-index="18") 屏東縣
+										option(value="臺東縣" data-index="19") 臺東縣
+										option(value="花蓮縣" data-index="20") 花蓮縣
+										option(value="連江縣" data-index="21") 連江縣
+								li
+									label(for="serviceCounty")
+										span.sr-only 請選擇
+									select(id="serviceCounty" name="serviceCounty")
+										option(value="" selected) ---
+								li.addCont
+									label(for="serviceAdd" placeholder="請輸入地址" title="聯絡地址")
+									input(type="text" id="serviceAdd" name="serviceAdd" placeholder="請輸入地址" title="聯絡地址")
+						li.items
+							label(for="serviceItemsMenu" id="serviceItemsMenu" aria-title="請選擇" aria-label="請選擇") 回收輔具類型
+								span(aria-label="必填") 必填
+							select(id="serviceItemsMenu" name="serviceItemsMenu")
+								option(value="1") 行走輔具
+								option(value="2") 輪椅類
+								option(value="3") 氣墊床
+								option(value="4") 照顧床
+								option(value="5") 便盆椅
+								option(value="6") 洗澡椅
+								option(value="7") 照顧輔具
+								option(value="8") 特製輔具
+							ul.itemCont
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+								li
+									.img
+										img(src="upload/20200511131141.jpg" alt="單手拐")
+									p
+										input(type="radio" id="item01" name="item01" title="單手拐")
+										label(for="item01") 單手拐
+										input(type="number" placeholder="請輸入數量" title="單手拐數量")
+						li.notice
+							label(for="damgeMessage" aira-title="損壞原因") 損壞原因
+							textarea(id="damgeMessage" name="damgeMessage")
+						li.notice
+							label(for="PartSelection") 選用零件
+								span(aria-label="必填") 必填
+							ul.noteCont
+								li
+									input(type="radio" id="PartSelection01" name="PartSelect" title="二手零配件（需配對）")
+									label(for="PartSelection01") 二手零配件（需配對）
+								li
+									input(type="radio" id="PartSelection02" name="PartSelect" title="全新零配件（需自費)")
+									label(for="PartSelection02") 全新零配件（需自費)
+								li
+									input(type="radio" id="PartSelection03" name="PartSelect" title="本自備零配件")
+									label(for="PartSelection03") 本自備零配件
+						li.CAPTCHA
+							label(for="CAPTCHACode") 驗證碼
+								span(aria-label="必填") 必填
+							input(type="text" id="CAPTCHACode" name="CAPTCHACode" title="驗證碼" aria-required="true")
+							img#imgcode(src="captcha/securimage_show.jpg" alt="請輸入驗證碼")
+							a(href="javascript:;" title="語音播放")
+								span #[i] 語音播放
+					.button
+						button.reset(type="button" id="reset" name="reset") 清除重填
+						button.submit(type="button" id="service" name="service") 確認送出
+
